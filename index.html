@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Shalini M | Data Analyst Portfolio</title>
-  <!-- Google Fonts & Simple Icons (Font Awesome CDN for crisp icons) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <title>Shalini M | Cinematic Data Analyst Portfolio</title>
+  <!-- Google Fonts & Preconnect -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -16,8 +16,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0a0c12, #030406);
-      color: #f0f3fa;
+      background: #0A0C10;
+      color: #EFF3F8;
       line-height: 1.5;
       scroll-behavior: smooth;
       overflow-x: hidden;
@@ -25,681 +25,658 @@
 
     /* custom scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #141824;
+      background: #1A1E26;
     }
     ::-webkit-scrollbar-thumb {
-      background: #3b4b6e;
+      background: #6C5CE7;
       border-radius: 8px;
     }
 
-    /* GLASS + NEUMORPHISM MIX */
+    /* glassmorphism + neumorphism mix */
     .glass-card {
-      background: rgba(20, 24, 36, 0.55);
-      backdrop-filter: blur(12px);
+      background: rgba(20, 24, 32, 0.65);
+      backdrop-filter: blur(14px);
       border-radius: 2rem;
-      border: 1px solid rgba(72, 187, 255, 0.2);
-      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-      transition: transform 0.25s ease, border-color 0.2s;
+      border: 1px solid rgba(108, 92, 231, 0.25);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4), inset 0 0.5px 0 rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
     }
+
     .glass-card:hover {
-      border-color: rgba(0, 200, 255, 0.5);
-      transform: translateY(-4px);
+      border-color: rgba(108, 92, 231, 0.6);
+      box-shadow: 0 25px 40px -16px rgba(108, 92, 231, 0.2);
+    }
+
+    /* Gradient accents */
+    .gradient-text {
+      background: linear-gradient(135deg, #C084FC, #6C5CE7, #4FACFE);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
     }
 
     /* container */
     .container {
-      max-width: 1300px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
-    /* sticky nav + glow */
-    .navbar {
+    /* Sticky Nav */
+    nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(3, 5, 12, 0.75);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(108, 92, 231, 0.3);
       transition: all 0.3s;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.7rem;
-      background: linear-gradient(135deg, #a5f0ff, #4c9aff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
     }
     .nav-links {
       display: flex;
+      justify-content: center;
       gap: 2rem;
-      list-style: none;
+      flex-wrap: wrap;
+      padding: 1rem 0;
     }
     .nav-links a {
+      color: #EFF3F8;
       text-decoration: none;
-      color: #ddd;
       font-weight: 500;
-      transition: 0.2s;
       font-size: 0.95rem;
-      letter-spacing: 0.3px;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #3be0ff;
-      text-shadow: 0 0 5px #00a6ff;
-    }
-    /* mobile menu */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
-    }
-
-    /* hero cinematic */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content {
-      z-index: 2;
-      animation: fadeInUp 1s ease-out;
-    }
-    .hero-greeting {
-      font-size: 1.2rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #b0d4ff, #3f87ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-name {
-      font-size: 4.5rem;
-      font-weight: 800;
-      margin: 0.8rem 0;
-      background: linear-gradient(to right, #fff, #7bc5ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .typing-wrapper {
-      font-size: 1.7rem;
-      min-height: 3rem;
-      margin: 1rem 0;
-      color: #b9e2ff;
-    }
-    .cta-buttons {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.25s;
-      border: 1px solid rgba(72, 187, 255, 0.5);
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(5px);
-      color: white;
-    }
-    .btn-primary {
-      background: linear-gradient(95deg, #0077ff, #00c3ff);
-      border: none;
-      box-shadow: 0 8px 18px rgba(0,180,255,0.2);
-    }
-    .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 22px rgba(0,160,255,0.4);
-    }
-    .btn-outline:hover {
-      background: rgba(0,200,255,0.15);
-      border-color: #3be0ff;
-    }
-
-    /* section styling */
-    section {
-      padding: 5rem 0;
-    }
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 2.5rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 70%;
-      height: 3px;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      border-radius: 3px;
-    }
-
-    /* skills progress bars */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-    }
-    .skill-category {
-      flex: 1;
-      min-width: 220px;
-      background: rgba(18, 22, 35, 0.6);
-      border-radius: 2rem;
-      padding: 1.5rem;
-      backdrop-filter: blur(4px);
-    }
-    .skill-item {
-      margin: 1.2rem 0;
-    }
-    .skill-name {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    .progress-bar-bg {
-      background: #2a2f3f;
-      border-radius: 30px;
-      overflow: hidden;
-      height: 8px;
-    }
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #3be0ff, #2b6eff);
-      border-radius: 30px;
-      transition: width 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    /* timeline experience */
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-    .timeline-item {
-      margin-bottom: 2rem;
-      position: relative;
-      padding-left: 2rem;
-      border-left: 2px solid #2c6b9e;
-    }
-    .timeline-item:before {
-      content: '';
-      position: absolute;
-      left: -9px;
-      top: 8px;
-      width: 16px;
-      height: 16px;
-      background: #3be0ff;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #00c8ff;
-    }
-    .timeline-date {
-      font-size: 0.85rem;
-      color: #7ba9ff;
-      margin-bottom: 0.3rem;
-    }
-
-    /* project cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-    .project-card {
-      background: rgba(18, 22, 40, 0.7);
-      border-radius: 1.6rem;
-      padding: 1.6rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 1px solid rgba(59, 224, 255, 0.1);
-    }
-    .project-card i {
-      font-size: 2rem;
-      color: #3be0ff;
-      margin-bottom: 1rem;
-    }
-    .project-card h3 {
-      margin: 0.8rem 0;
-    }
-    .project-tech {
-      font-size: 0.75rem;
-      color: #a0bbe5;
-      margin: 0.7rem 0;
-    }
-
-    /* contact form */
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      justify-content: space-between;
-    }
-    .contact-info, .contact-form-container {
-      flex: 1;
-      min-width: 250px;
-    }
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .social-icon {
-      font-size: 2rem;
-      color: #c1d9ff;
       transition: 0.2s;
+      letter-spacing: 0.3px;
+      position: relative;
     }
-    .social-icon:hover {
-      color: #3be0ff;
-      transform: translateY(-5px);
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #C084FC, #6C5CE7);
+      transition: 0.3s;
+      border-radius: 2px;
     }
-    .contact-form input, .contact-form textarea {
+    .nav-links a:hover::after, .nav-links a.active::after {
       width: 100%;
-      padding: 1rem;
-      margin: 0.8rem 0;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(72,187,255,0.3);
-      border-radius: 1.2rem;
-      color: white;
-      font-family: inherit;
     }
-    .contact-form button {
-      background: linear-gradient(100deg, #0072ff, #00c6ff);
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 2rem;
-      font-weight: bold;
-      cursor: pointer;
+    .nav-links a.active {
+      color: #C084FC;
     }
 
-    /* back to top + scroll indicator */
-    .scroll-progress {
+    /* progress bar */
+    .progress-container {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 0%;
+      z-index: 1010;
+      width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #00c6ff, #6b4eff);
-      z-index: 10000;
+      background: transparent;
+    }
+    .progress-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #C084FC, #6C5CE7);
+      width: 0%;
       transition: width 0.08s linear;
     }
+
+    /* back to top */
     .back-to-top {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: #1f2a48;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
+      background: #6C5CE7;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transition: 0.2s;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+      z-index: 99;
+      box-shadow: 0 5px 15px rgba(108,92,231,0.4);
     }
     .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
 
-    /* footer */
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .avatar-icon {
+      font-size: 4rem;
+      background: rgba(108, 92, 231, 0.2);
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 1px solid rgba(108, 92, 231, 0.6);
+    }
+    .typing {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+    .hero-btns {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary, .btn-outline {
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(100deg, #6C5CE7, #8B6CF5);
+      color: white;
+      border: none;
+      box-shadow: 0 8px 18px rgba(108,92,231,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px -8px rgba(108,92,231,0.5);
+    }
+    .btn-outline {
+      border: 1px solid #6C5CE7;
+      background: transparent;
+      color: #EFF3F8;
+    }
+    .btn-outline:hover {
+      background: rgba(108,92,231,0.2);
+      border-color: #C084FC;
+    }
+
+    /* section style */
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    /* skills bars */
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .skill-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #252A34;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #C084FC, #6C5CE7);
+      border-radius: 10px;
+      transition: width 1s ease-out;
+    }
+
+    /* timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      border-left: 2px solid #6C5CE7;
+      padding-left: 2rem;
+      margin-left: 1rem;
+      transition: transform 0.2s;
+    }
+    .timeline-item:last-child {
+      border-left: 2px solid transparent;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: #C084FC;
+      border-radius: 50%;
+      border: 2px solid #0A0C10;
+    }
+    /* project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(28, 32, 42, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 1px solid rgba(108,92,231,0.2);
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      background: rgba(35, 40, 55, 0.8);
+      border-color: #6C5CE7;
+    }
+    .project-icon {
+      font-size: 2rem;
+      color: #C084FC;
+      margin-bottom: 1rem;
+    }
+    /* modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .modal-content {
+      max-width: 500px;
+      background: #131720;
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid #6C5CE7;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    /* contact form */
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: rgba(20,24,32,0.8);
+      border: 1px solid rgba(108,92,231,0.4);
+      border-radius: 1rem;
+      color: white;
+      font-family: inherit;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: #C084FC;
+    }
     footer {
       text-align: center;
-      padding: 2rem 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.8rem;
+      padding: 2rem;
+      border-top: 1px solid rgba(108,92,231,0.2);
     }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
+    .social-icons a {
+      color: #EFF3F8;
+      font-size: 1.6rem;
+      margin: 0 0.8rem;
+      transition: 0.2s;
+      display: inline-block;
     }
-    .reveal {
+    .social-icons a:hover {
+      color: #C084FC;
+      transform: translateY(-3px);
+    }
+    @media (max-width: 768px) {
+      .typing { font-size: 1.5rem; }
+      .section-title { font-size: 1.8rem; }
+      .nav-links { gap: 1rem; }
+      .hero { min-height: 70vh; }
+    }
+    .fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
     }
-    .reveal.active {
+    .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    @media (max-width: 850px) {
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        background: rgba(8, 12, 25, 0.95);
-        backdrop-filter: blur(20px);
-        width: 80%;
-        padding: 2rem;
-        border-radius: 2rem;
-        transition: 0.3s;
-        gap: 1.8rem;
-      }
-      .nav-links.active {
-        left: 5%;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .hero-name {
-        font-size: 2.5rem;
-      }
-      .typing-wrapper {
-        font-size: 1.2rem;
-      }
-      .container {
-        padding: 0 1.2rem;
-      }
     }
   </style>
 </head>
 <body>
-
-<div class="scroll-progress" id="progressBar"></div>
-<div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
-
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">SHALINI M</div>
-    <div class="menu-toggle" id="mobileMenu"><i class="fas fa-bars"></i></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+<nav>
+  <div class="container">
+    <div class="nav-links">
+      <a href="#home" class="nav-link active">HOME</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#skills" class="nav-link">SKILLS</a>
+      <a href="#experience" class="nav-link">EXPERIENCE</a>
+      <a href="#projects" class="nav-link">PROJECTS</a>
+      <a href="#education" class="nav-link">EDUCATION</a>
+      <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </div>
   </div>
 </nav>
 
-<main>
-  <!-- Hero Section cinematic -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="hero-greeting">Hello, I'm</div>
-      <h1 class="hero-name">Shalini M</h1>
-      <div class="typing-wrapper" id="typed-text"></div>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">Explore Work</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-        <a href="https://github.com/Shalinigowd" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+<main class="container">
+  <!-- Hero Section -->
+  <section id="home" class="hero fade-up">
+    <div class="hero-content">
+      <div class="avatar-icon">
+        <i class="fas fa-chart-line" style="font-size: 3rem;"></i>
+      </div>
+      <h1 style="font-size: 3rem; font-weight: 800;">SHALINI M</h1>
+      <div class="typing" id="typed-text"></div>
+      <div style="margin: 1rem 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <span><i class="fas fa-phone-alt"></i> +91 99648 30480</span>
+        <span><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Hire Me <i class="fas fa-paper-plane"></i></a>
+        <a href="#projects" class="btn-outline">View Work <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <!-- About -->
-    <section id="about" class="reveal">
-      <h2 class="section-title">About Me</h2>
-      <div class="glass-card" style="padding: 2rem;">
-        <p style="font-size: 1.1rem;">🔍 Data Analyst with a passion for transforming raw data into actionable insights. Proficient in Python, SQL, Power BI, and Excel. I love solving business problems and creating interactive dashboards that drive decisions. Currently pursuing BE in Computer Science & Business Systems, eager to contribute to real-world projects while expanding my skills in data engineering & analytics.</p>
-        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-          <span><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</span>
-          <span><i class="fas fa-phone-alt"></i> +91 99648 30480</span>
-          <span><i class="fab fa-linkedin"></i> shalinim08</span>
-        </div>
+  <!-- About -->
+  <section id="about" class="fade-up">
+    <div class="glass-card" style="padding: 2rem;">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">📊 About Me</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6;">Aspiring Data Analyst with hands-on expertise in Python, SQL, Power BI, and Machine Learning. I transform raw data into actionable insights through interactive dashboards, predictive models, and exploratory analysis. Passionate about data-driven decision-making and business growth — blending analytical thinking with creative storytelling.</p>
+      <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <span><i class="fab fa-python gradient-text"></i> Python</span>
+        <span><i class="fas fa-database gradient-text"></i> SQL</span>
+        <span><i class="fas fa-chart-pie gradient-text"></i> Power BI</span>
+        <span><i class="fas fa-brain gradient-text"></i> ML Models</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills with animated progress -->
-    <section id="skills" class="reveal">
-      <h2 class="section-title">Technical Arsenal</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Languages & Analytics</h3>
-          <div class="skill-item"><div class="skill-name"><span>Python (Pandas, NumPy)</span><span>90%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="90"></div></div></div>
-          <div class="skill-item"><div class="skill-name"><span>SQL</span><span>85%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="85"></div></div></div>
-          <div class="skill-item"><div class="skill-name"><span>Excel (Pivot, XLOOKUP)</span><span>88%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="88"></div></div></div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-chart-line"></i> Visualization & BI</h3>
-          <div class="skill-item"><div class="skill-name"><span>Power BI (DAX, Power Query)</span><span>85%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="85"></div></div></div>
-          <div class="skill-item"><div class="skill-name"><span>Tableau (Basic)</span><span>70%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="70"></div></div></div>
-          <div class="skill-item"><div class="skill-name"><span>Matplotlib / Seaborn</span><span>80%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="80"></div></div></div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-brain"></i> ML & Stats</h3>
-          <div class="skill-item"><div class="skill-name"><span>Supervised Learning</span><span>75%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="75"></div></div></div>
-          <div class="skill-item"><div class="skill-name"><span>Statistics (Hypothesis)</span><span>78%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="78"></div></div></div>
-        </div>
+  <!-- Skills with animated progress bars -->
+  <section id="skills" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">⚡ Technical Arsenal</span></h2>
+    <div class="glass-card" style="padding: 2rem;">
+      <div class="skill-item"><div class="skill-info"><span>Python (Pandas, NumPy, Matplotlib)</span><span>90%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div></div>
+      <div class="skill-item"><div class="skill-info"><span>SQL & PostgreSQL (Joins, Window Functions)</span><span>88%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div></div>
+      <div class="skill-item"><div class="skill-info"><span>Power BI (DAX, Power Query)</span><span>85%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div></div>
+      <div class="skill-item"><div class="skill-info"><span>Excel (Pivot, XLOOKUP, Dashboards)</span><span>87%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="87"></div></div></div>
+      <div class="skill-item"><div class="skill-info"><span>Machine Learning (Random Forest, XGBoost)</span><span>75%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div></div>
+      <div class="skill-item"><div class="skill-info"><span>ETL & Data Cleaning</span><span>85%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div></div>
+    </div>
+  </section>
+
+  <!-- Experience / Internship Timeline -->
+  <section id="experience" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">💼 Experience Journey</span></h2>
+    <div class="timeline glass-card" style="padding: 2rem;">
+      <div class="timeline-item"><div class="timeline-dot"></div><h3>📌 Data Analyst Intern @ QSpiders</h3><p style="color:#B5C0D0;">2024 – Present</p><p>Applied Python (Pandas/NumPy) for data preprocessing, EDA, interactive Power BI dashboards, KPI tracking, and SQL extraction. Delivered business-ready reports.</p></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><h3>📌 GenAI Powered Data Analytics Simulation @ Forage</h3><p style="color:#B5C0D0;">Virtual Job Simulation</p><p>Leveraged GenAI analytics to drive insights, improved data storytelling and decision frameworks.</p></div>
+    </div>
+  </section>
+
+  <!-- Projects Grid with modal -->
+  <section id="projects" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">🚀 Cinematic Projects</span></h2>
+    <div class="projects-grid">
+      <div class="project-card" data-project="hr">
+        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>HR Analytics & Attrition Prediction</h3>
+        <p>Power BI + Python (Random Forest) – 1,470 employees, predictive retention model & KPI dashboard.</p>
+        <small style="color:#C084FC;">Click for details →</small>
       </div>
-    </section>
-
-    <!-- Experience / Internship timeline -->
-    <section id="experience" class="reveal">
-      <h2 class="section-title">Experience Journey</h2>
-      <div class="timeline glass-card" style="padding: 2rem;">
-        <div class="timeline-item">
-          <div class="timeline-date">2024 – Present</div>
-          <h3>Data Analyst Intern @ QSpiders</h3>
-          <p>Data cleaning, EDA, Power BI dashboards, KPI reporting. Wrote complex SQL queries and used Python (Pandas) for processing large datasets. Built executive dashboards for business insights.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2023 – 2024</div>
-          <h3>Freelance Data Analyst Projects</h3>
-          <p>Developed interactive dashboards for customer segmentation and inventory analysis. Derived insights using Excel, SQL, Power BI.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2022 – 2023</div>
-          <h3>Forage Virtual Internships</h3>
-          <p>Data Analytics & GenAI powered simulations, real-world problem solving on business case studies.</p>
-        </div>
+      <div class="project-card" data-project="blinkit">
+        <div class="project-icon"><i class="fas fa-chart-simple"></i></div>
+        <h3>Blinkit Sales Analysis Dashboard</h3>
+        <p>Excel (Pivot, XLOOKUP) – Sales performance across outlets, interactive dashboard.</p>
+        <small style="color:#C084FC;">Click for details →</small>
       </div>
-    </section>
-
-    <!-- Projects with interactive modals (modal inline)-->
-    <section id="projects" class="reveal">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="reveal">
-      <h2 class="section-title">Academic Background</h2>
-      <div class="glass-card" style="padding: 2rem;">
-        <div><strong>🎓 Bachelor of Engineering – Computer Science & Business Systems</strong><br>VTU (MIT Mysore) | 2023 – 2026 | CGPA: 7.34</div>
-        <div style="margin-top:1rem;"><strong>📘 Diploma – Computer Science & Engineering</strong><br>Government Polytechnic, Arakere | 2020 – 2023</div>
-        <div style="margin-top:1rem;"><strong>📖 SSLC (State Board)</strong><br>Karnataka Public School | 2020 | 77.76%</div>
+      <div class="project-card" data-project="zepto">
+        <div class="project-icon"><i class="fas fa-boxes"></i></div>
+        <h3>Zepto Inventory Analysis (SQL)</h3>
+        <p>PostgreSQL – 20+ advanced queries, discount trends, OOS products & revenue analysis.</p>
+        <small style="color:#C084FC;">Click for details →</small>
       </div>
-      <div style="margin-top: 2rem;">
-        <h3 class="section-title" style="font-size:1.8rem;">Certifications</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-          <span class="glass-card" style="padding: 0.5rem 1rem;">📜 Forage Data Analytics</span>
-          <span class="glass-card" style="padding: 0.5rem 1rem;">📊 Data Visualization – Forage</span>
-          <span class="glass-card" style="padding: 0.5rem 1rem;">🤖 GenAI Powered Analytics</span>
-          <span class="glass-card" style="padding: 0.5rem 1rem;">⚡ TCS ion Career Edge</span>
-          <span class="glass-card" style="padding: 0.5rem 1rem;">📈 Power BI Workshop</span>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="reveal">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-flex">
-        <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Karnataka, India</p>
-          <p><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</p>
-          <p><i class="fas fa-phone-alt"></i> +91 99648 30480</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/shalinim08/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Shalinigowd" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://shalinigowd.github.io/shalini-portfolio/" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
-          </div>
-        </div>
-        <div class="contact-form-container">
-          <form class="contact-form" id="demoForm">
+  <!-- Education -->
+  <section id="education" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">🎓 Academic Canvas</span></h2>
+    <div class="glass-card" style="padding: 2rem;">
+      <div><i class="fas fa-graduation-cap"></i> <strong>B.E – Computer Science & Business Systems</strong> | MIT Mysore, VTU (2023-2026) | CGPA: 7.34</div>
+      <div style="margin-top: 1rem;"><i class="fas fa-diploma"></i> <strong>Diploma – Computer Science</strong> | Govt Polytechnic Arakere (2020-2023)</div>
+      <div style="margin-top: 1rem;"><i class="fas fa-school"></i> <strong>SSLC</strong> | Karnataka Public School (2020) | 77.76%</div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">📜 Certifications</span></h2>
+    <div class="projects-grid">
+      <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-certificate gradient-text"></i> Data Analytics Job Simulation – Forage</div>
+      <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-chart-line gradient-text"></i> Data Visualization: Empowering Business – Forage</div>
+      <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-robot gradient-text"></i> GenAI Powered Data Analytics – Forage</div>
+      <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-briefcase gradient-text"></i> TCS iON Career Edge – Young Professional</div>
+    </div>
+  </section>
+
+  <!-- Contact + Social -->
+  <section id="contact" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">✨ Let's Connect</span></h2>
+    <div class="glass-card" style="padding: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <h3>Send a message</h3>
+          <form class="contact-form" id="demoContact">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Email Address" required>
-            <textarea rows="3" placeholder="Message..."></textarea>
-            <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-            <p style="font-size: 0.7rem; margin-top: 0.5rem;">* Demo UI — connect via email for opportunities</p>
+            <textarea rows="3" placeholder="Your vision or query..."></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%; border: none;">Send <i class="fas fa-paper-plane"></i></button>
+            <p style="font-size: 0.8rem; margin-top: 0.8rem;"><i class="fas fa-info-circle"></i> Demo UI – functional alert</p>
           </form>
         </div>
+        <div>
+          <h3>Digital Presence</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-globe"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div style="margin-top: 2rem;">
+            <p><i class="fas fa-phone-alt"></i> +91 99648 30480</p>
+            <p><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</p>
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
-  <footer>
-    <p>© 2025 Shalini M — Data Alchemist | Built with cinematic glass & story-driven design</p>
-  </footer>
+    </div>
+  </section>
 </main>
 
+<footer>
+  <p>© 2025 SHALINI M — Data Alchemist | Designed with cinematic glassmorphism & neural precision</p>
+</footer>
+
+<div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+<!-- Modal Structure -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <small>Tech Stack: <span id="modalTech"></span></small>
+  </div>
+</div>
+
 <script>
-  // Typing effect
-  const roles = ["Data Analyst", "Python & SQL Expert", "Power BI Storyteller", "Insight Architect"];
-  let i = 0, j = 0, current = "", isDeleting = false;
+  // typing effect
+  const roles = ["Data Analyst", "Python & SQL Expert", "BI Visualization Artist", "Insight Engineer"];
+  let idx = 0, charIdx = 0, isDeleting = false;
+  const typedSpan = document.getElementById("typed-text");
   function typeEffect() {
-    const fullText = roles[i];
+    let current = roles[idx];
     if (isDeleting) {
-      current = fullText.substring(0, j-1);
-      j--;
+      typedSpan.innerText = current.substring(0, charIdx--);
+      if (charIdx < 0) {
+        isDeleting = false;
+        idx = (idx + 1) % roles.length;
+        setTimeout(typeEffect, 150);
+        return;
+      }
     } else {
-      current = fullText.substring(0, j+1);
-      j++;
+      typedSpan.innerText = current.substring(0, charIdx++);
+      if (charIdx > current.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000);
+        return;
+      }
     }
-    document.getElementById("typed-text").innerHTML = `<span style="border-right: 2px solid #3be0ff; padding-right: 4px;">🔍 ${current}</span>`;
-    if (!isDeleting && j === fullText.length) isDeleting = true;
-    else if (isDeleting && j === 0) { isDeleting = false; i = (i+1) % roles.length; }
-    setTimeout(typeEffect, isDeleting ? 80 : 150);
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
   }
   typeEffect();
 
-  // progress bars observer
-  const progressObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fills = entry.target.querySelectorAll('.progress-fill');
-        fills.forEach(fill => {
-          const widthVal = fill.getAttribute('data-width');
-          if (widthVal && fill.style.width !== widthVal+'%') fill.style.width = widthVal+'%';
-        });
-        progressObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.skill-category').forEach(cat => progressObserver.observe(cat));
-
-  // reveal on scroll (Intersection Observer)
-  const revealElements = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('active');
-    });
-  }, { threshold: 0.1 });
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // Projects data
-  const projectsData = [
-    { name: "Blinkit Sales Analysis", tech: "Excel, Pivot, Dashboard", desc: "Interactive dashboard analyzing tier-3 outlet revenue, regional sales trends.", link: "https://github.com/Shalinigowd/blinkit-excel-dashboard", icon: "fas fa-chart-simple" },
-    { name: "Customer Behavior Dashboard", tech: "Power BI, DAX, KPIs", desc: "Non-subscriber segmentation, retention strategies, real-time insights.", link: "https://github.com/Shalinigowd/customer-behaviordashboard", icon: "fas fa-users" },
-    { name: "Zepto Inventory Analysis", tech: "PostgreSQL, SQL", desc: "Price-per-gram, out-of-stock analysis, revenue per category.", link: "https://github.com/Shalinigowd/sql_project", icon: "fas fa-database" },
-  ];
-  const projectGrid = document.getElementById('projectsGrid');
-  function buildProjectCards() {
-    projectGrid.innerHTML = projectsData.map(p => `
-      <div class="project-card" onclick="openModal('${p.name}', '${p.desc}', '${p.tech}', '${p.link}')">
-        <i class="${p.icon}"></i>
-        <h3>${p.name}</h3>
-        <p>${p.desc.substring(0, 80)}...</p>
-        <div class="project-tech">🛠️ ${p.tech}</div>
-      </div>
-    `).join('');
-  }
-  window.openModal = (name, desc, tech, link) => {
-    const modalHtml = document.createElement('div');
-    modalHtml.id = "dynamicModal";
-    modalHtml.style.position = "fixed"; modalHtml.style.top=0; modalHtml.style.left=0; modalHtml.style.width="100%"; modalHtml.style.height="100%";
-    modalHtml.style.background = "rgba(0,0,0,0.8)"; modalHtml.style.backdropFilter = "blur(10px)"; modalHtml.style.display="flex"; modalHtml.style.alignItems="center"; modalHtml.style.justifyContent="center"; modalHtml.style.zIndex=10000;
-    modalHtml.innerHTML = `<div style="background:#11161f; max-width:500px; border-radius:2rem; padding:2rem; border:1px solid cyan;"><h2>${name}</h2><p>${desc}</p><p><strong>Tech:</strong> ${tech}</p><a href="${link}" target="_blank" style="color:#3be0ff;">🔗 View on GitHub</a><div style="margin-top:1.5rem;"><button id="closeModalBtn" style="background:#2b6eff; border:none; padding:0.5rem 1.5rem; border-radius:2rem;">Close</button></div></div>`;
-    document.body.appendChild(modalHtml);
-    document.getElementById('closeModalBtn').onclick = () => modalHtml.remove();
-  };
-  buildProjectCards();
-
-  // Nav active highlight + scroll progress & back to top
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link');
-  function updateActive() {
-    let current = "";
-    sections.forEach(sec => {
-      const secTop = sec.offsetTop - 150;
-      if (pageYOffset >= secTop) current = sec.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
-    });
-  }
-  window.addEventListener('scroll', () => {
-    updateActive();
+  // scroll progress
+  window.addEventListener("scroll", () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (winScroll / height) * 100;
-    document.getElementById('progressBar').style.width = scrolled + "%";
-    const backBtn = document.getElementById('backToTop');
-    if (window.scrollY > 500) backBtn.classList.add('show');
-    else backBtn.classList.remove('show');
+    document.getElementById("progressBar").style.width = scrolled + "%";
+    // back to top
+    const backBtn = document.getElementById("backToTop");
+    if (winScroll > 400) backBtn.classList.add("show");
+    else backBtn.classList.remove("show");
   });
-  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // mobile menu toggle
-  const mobileToggle = document.getElementById('mobileMenu');
-  const navMenu = document.getElementById('navLinks');
-  mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
-  document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
-
-  // contact form UI demo
-  document.getElementById('demoForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('✨ Thank you! This is a demo portfolio. For opportunities, feel free to email or connect on LinkedIn!');
-    e.target.reset();
+  document.getElementById("backToTop").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // manual set active for progress on skill load after lazy init
-  setTimeout(() => {
-    const visibleSkills = document.querySelectorAll('.skill-category');
-    visibleSkills.forEach(cat => {
-      const rect = cat.getBoundingClientRect();
-      if (rect.top < window.innerHeight-100) {
-        cat.querySelectorAll('.progress-fill').forEach(fill => { if(fill.getAttribute('data-width')) fill.style.width = fill.getAttribute('data-width')+'%'; });
+  // active nav highlight + Intersection Observer
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  function setActive() {
+    let scrollPos = window.scrollY + 150;
+    sections.forEach(sec => {
+      const offsetTop = sec.offsetTop;
+      const offsetBottom = offsetTop + sec.offsetHeight;
+      if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+        const id = sec.getAttribute("id");
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + id) link.classList.add("active");
+        });
       }
     });
-  }, 300);
+  }
+  window.addEventListener("scroll", setActive);
+  setActive();
+
+  // Fade-up observer
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Animate skill bars when skills section visible
+  const skillSection = document.getElementById("skills");
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll(".skill-bar-fill").forEach(bar => {
+          const width = bar.getAttribute("data-width");
+          bar.style.width = width + "%";
+        });
+        skillObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  if(skillSection) skillObserver.observe(skillSection);
+
+  // Project Modal Data
+  const modal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const modalTech = document.getElementById("modalTech");
+  const closeModal = document.querySelector(".close-modal");
+
+  const projectDetails = {
+    hr: { title: "HR Analytics & Attrition Prediction", desc: "Built an interactive Power BI dashboard analyzing 1,470 employee records. Developed a Random Forest model predicting attrition with 86% accuracy, uncovering key drivers like overtime, job satisfaction, and tenure.", tech: "Python, Pandas, Scikit-learn, Power BI, DAX" },
+    blinkit: { title: "Blinkit Sales Analysis Dashboard", desc: "Designed Excel dashboards with PivotTables & advanced formulas, analyzing sales across multiple outlets. Generated actionable insights leading to category-level performance tracking.", tech: "Excel (Pivot, XLOOKUP), Data Visualization" },
+    zepto: { title: "Zepto Inventory Analysis (SQL)", desc: "Wrote 20+ PostgreSQL queries analyzing inventory turnover, discount effect, and out-of-stock patterns. Provided category-wise revenue optimization strategies.", tech: "PostgreSQL, CTEs, Window Functions" }
+  };
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const type = card.getAttribute("data-project");
+      if(type && projectDetails[type]) {
+        modalTitle.innerText = projectDetails[type].title;
+        modalDesc.innerText = projectDetails[type].desc;
+        modalTech.innerText = projectDetails[type].tech;
+        modal.style.display = "flex";
+      }
+    });
+  });
+  closeModal.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display = "none"; });
+
+  // contact form demo alert
+  const contactForm = document.getElementById("demoContact");
+  if(contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✨ Thanks for reaching out! (Demo mode — your message would be delivered to Shalini)");
+      contactForm.reset();
+    });
+  }
+  // smooth scroll for anchor links
+  document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 </script>
 </body>
 </html>
