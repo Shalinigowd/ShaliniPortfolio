@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Shalini M",
+    "email": "shalinigowda004@gmail.com",
+    "message": "hllo",
+    "date": "2026-05-24T17:10:50.607Z",
+    "ip": "::1"
+  },
+  {
+    "id": 2,
+    "name": "Shalini M",
+    "email": "shalinigowda004@gmail.com",
+    "message": "an",
+    "date": "2026-05-24T17:11:04.390Z",
+    "ip": "::1"
+  },
+  {
+    "id": 3,
+    "name": "Shalini M",
+    "email": "shalinigowda004@gmail.com",
+    "message": "fello",
+    "date": "2026-05-24T17:18:21.429Z",
+    "ip": "::1"
+  }
+]

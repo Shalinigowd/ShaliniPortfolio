@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalini M | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0A0C10; color: #EFF3F8; line-height: 1.5; scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1E26; }
+    ::-webkit-scrollbar-thumb { background: #6C5CE7; border-radius: 8px; }
+    .glass-card { background: rgba(20, 24, 32, 0.65); backdrop-filter: blur(14px); border-radius: 2rem; border: 1px solid rgba(108, 92, 231, 0.25); padding: 2rem; transition: all 0.3s ease; }
+    .glass-card:hover { border-color: rgba(108, 92, 231, 0.6); }
+    .gradient-text { background: linear-gradient(135deg, #C084FC, #6C5CE7, #4FACFE); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    nav { position: sticky; top: 0; z-index: 1000; background: rgba(10, 12, 16, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(108, 92, 231, 0.3); }
+    .nav-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 1rem 0; }
+    .nav-links a { color: #EFF3F8; text-decoration: none; font-weight: 500; transition: 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 2px; background: linear-gradient(90deg, #C084FC, #6C5CE7); transition: 0.3s; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: #C084FC; }
+    .progress-container { position: fixed; top: 0; z-index: 1010; width: 100%; height: 3px; background: transparent; }
+    .progress-bar { height: 3px; background: linear-gradient(90deg, #C084FC, #6C5CE7); width: 0%; transition: width 0.08s linear; }
+    .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #6C5CE7; width: 44px; height: 44px; border-radius: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 99; }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .avatar-icon { width: 120px; height: 120px; background: rgba(108, 92, 231, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; border: 2px solid #6C5CE7; }
+    h1 { font-size: 3rem; font-weight: 800; }
+    .typing { font-size: 1.8rem; color: #C084FC; margin: 0.5rem 0; min-height: 70px; }
+    .hero-btns { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary, .btn-outline { padding: 0.8rem 1.8rem; border-radius: 40px; font-weight: 600; transition: 0.2s; text-decoration: none; display: inline-block; cursor: pointer; }
+    .btn-primary { background: linear-gradient(100deg, #6C5CE7, #8B6CF5); color: white; border: none; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(108,92,231,0.3); }
+    .btn-outline { border: 1px solid #6C5CE7; background: transparent; color: #EFF3F8; }
+    .btn-outline:hover { background: rgba(108,92,231,0.2); }
+    section { padding: 5rem 0; }
+    .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; }
+    .skill-item { margin-bottom: 1.5rem; }
+    .skill-info { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .skill-bar-bg { width: 100%; height: 8px; background: #252A34; border-radius: 10px; overflow: hidden; }
+    .skill-bar-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #C084FC, #6C5CE7); border-radius: 10px; transition: width 1s ease-out; }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline-item { position: relative; padding-bottom: 2rem; border-left: 2px solid #6C5CE7; padding-left: 2rem; margin-left: 1rem; }
+    .timeline-item:last-child { border-left-color: transparent; }
+    .timeline-dot { position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: #C084FC; border-radius: 50%; border: 2px solid #0A0C10; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
+    .project-card { background: rgba(28, 32, 42, 0.7); backdrop-filter: blur(8px); border-radius: 1.5rem; padding: 1.5rem; transition: all 0.3s; border: 1px solid rgba(108,92,231,0.2); }
+    .project-card:hover { transform: translateY(-8px); border-color: #6C5CE7; }
+    .project-icon { font-size: 2rem; color: #C084FC; margin-bottom: 1rem; }
+    .project-links { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+    .project-link { color: #C084FC; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.8rem; background: rgba(108,92,231,0.1); border-radius: 20px; cursor: pointer; }
+    .project-link:hover { background: rgba(108,92,231,0.3); transform: translateX(3px); }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+    .cert-item { padding: 1rem; background: rgba(28, 32, 42, 0.5); border-radius: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; }
+    .modal-content { max-width: 500px; background: #131720; border-radius: 2rem; padding: 2rem; border: 1px solid #6C5CE7; position: relative; }
+    .close-modal { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; background: rgba(20,24,32,0.8); border: 1px solid rgba(108,92,231,0.4); border-radius: 1rem; color: white; font-family: inherit; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #C084FC; }
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(108,92,231,0.2); }
+    .social-icons a { color: #EFF3F8; font-size: 1.6rem; margin: 0 0.8rem; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #C084FC; transform: translateY(-3px); }
+    .contact-info { margin-top: 2rem; }
+    .contact-info p { margin: 0.8rem 0; }
+    @media (max-width: 768px) { .typing { font-size: 1.2rem; } .section-title { font-size: 1.8rem; } .projects-grid { grid-template-columns: 1fr; } }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+<nav><div class="container"><div class="nav-links">
+  <a href="#home" class="nav-link active">HOME</a>
+  <a href="#about" class="nav-link">ABOUT</a>
+  <a href="#skills" class="nav-link">SKILLS</a>
+  <a href="#experience" class="nav-link">EXPERIENCE</a>
+  <a href="#projects" class="nav-link">PROJECTS</a>
+  <a href="#education" class="nav-link">EDUCATION</a>
+  <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+  <a href="#contact" class="nav-link">CONTACT</a>
+</div></div></nav>
+
+<main class="container">
+  <!-- Hero Section -->
+  <section id="home" class="hero fade-up">
+    <div class="hero-content">
+      <div class="avatar-icon"><i class="fas fa-chart-line" style="font-size: 3rem;"></i></div>
+      <h1>SHALINI M</h1>
+      <div class="typing" id="typed-text"></div>
+      <div style="margin: 1rem 0;"><span><i class="fas fa-phone-alt"></i> +91 99648 30480</span> | <span><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</span></div>
+      <div class="hero-btns"><a href="#contact" class="btn-primary">Hire Me</a><a href="#projects" class="btn-outline">View Work</a></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-up"><div class="glass-card"><h2 style="margin-bottom:1rem">📊 About Me</h2><p>Aspiring Data Analyst with hands-on experience in Python, SQL, Excel, and Power BI. Skilled in data analysis, visualization, dashboard development, EDA, and business intelligence. Seeking an entry-level Data Analyst role to support data-driven decision-making.</p><div style="display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap"><span><i class="fab fa-python gradient-text"></i> Python</span><span><i class="fas fa-database gradient-text"></i> SQL</span><span><i class="fas fa-chart-pie gradient-text"></i> Power BI</span><span><i class="fas fa-brain gradient-text"></i> ML</span></div></div></section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="fade-up"><h2 class="section-title"><span class="gradient-text">⚡ Technical Skills</span></h2><div class="glass-card" id="skillsContainer"></div></section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="fade-up"><h2 class="section-title"><span class="gradient-text">💼 Experience</span></h2><div class="timeline glass-card"><div class="timeline-item"><div class="timeline-dot"></div><h3>📌 Data Analyst Intern @ QSpiders</h3><p>2024 – Present</p><p>Applied Python, SQL, Power BI for data analysis. Developed interactive dashboards, performed ETL, and delivered business insights.</p></div><div class="timeline-item"><div class="timeline-dot"></div><h3>📌 GenAI Data Analytics Simulation</h3><p>Forage - Virtual Program</p><p>Leveraged GenAI for data storytelling and decision frameworks.</p></div></div></section>
+
+  <!-- Projects Section with YOUR actual GitHub links -->
+  <section id="projects" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">🚀 Projects</span></h2>
+    <div class="projects-grid">
+      <!-- HR Analytics Project -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>HR Analytics & Employee Attrition Prediction</h3>
+        <p>Power BI + Python (Random Forest) – Analyzed 1,470 employee records, built predictive retention model with 86% accuracy.</p>
+        <div class="project-links">
+          <a class="project-link" onclick='showProjectDetails("hr")'><i class="fas fa-info-circle"></i> Details</a>
+          <a href="https://github.com/Shalinigowd/HR-Analytics_Project" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- Blinkit Dashboard -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-chart-simple"></i></div>
+        <h3>Blinkit Sales Analysis Dashboard</h3>
+        <p>Excel (Pivot Tables, XLOOKUP) – Sales performance analysis across multiple outlets with interactive dashboards.</p>
+        <div class="project-links">
+          <a class="project-link" onclick='showProjectDetails("blinkit")'><i class="fas fa-info-circle"></i> Details</a>
+          <a href="https://github.com/Shalinigowd/blinkit-excel-dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- SQL Project -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-boxes"></i></div>
+        <h3>Zepto Inventory Analysis (SQL)</h3>
+        <p>PostgreSQL – 20+ SQL queries analyzing inventory, discounts, out-of-stock products, and revenue.</p>
+        <div class="project-links">
+          <a class="project-link" onclick='showProjectDetails("sql")'><i class="fas fa-info-circle"></i> Details</a>
+          <a href="https://github.com/Shalinigowd/sql_project" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="fade-up"><h2 class="section-title"><span class="gradient-text">🎓 Education</span></h2><div class="glass-card"><div><i class="fas fa-graduation-cap gradient-text"></i> <strong>B.E – CS & Business Systems</strong><br>MIT Mysore | VTU | 2023-2026 | CGPA: 7.58</div><div style="margin-top:1rem"><i class="fas fa-diploma gradient-text"></i> <strong>Diploma – CSE</strong><br>Government Polytechnic Arakere | 2020-2023</div><div style="margin-top:1rem"><i class="fas fa-school gradient-text"></i> <strong>SSLC</strong><br>Karnataka Public School | 2020 | 77.76%</div></div></section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="fade-up"><h2 class="section-title"><span class="gradient-text">📜 Certifications</span></h2><div class="cert-grid" id="certsContainer"></div></section>
+
+  <!-- Contact Section with YOUR social links -->
+  <section id="contact" class="fade-up">
+    <h2 class="section-title"><span class="gradient-text">✨ Let's Connect</span></h2>
+    <div class="glass-card">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <h3>Send a message</h3>
+          <form class="contact-form" id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" placeholder="Email Address" required>
+            <textarea id="contactMsg" rows="4" placeholder="Your message..."></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Message <i class="fas fa-paper-plane"></i></button>
+            <div id="formStatus" style="margin-top: 1rem;"></div>
+          </form>
+        </div>
+        <div>
+          <h3>Connect with me</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/shalinim08/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Shalinigowd" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="contact-info">
+            <p><i class="fas fa-phone-alt"></i> +91 99648 30480</p>
+            <p><i class="fas fa-envelope"></i> shalinigowda004@gmail.com</p>
+            <p><i class="fab fa-github"></i> github.com/Shalinigowd</p>
+            <p><i class="fab fa-linkedin"></i> linkedin.com/in/shalinim08</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><p>© 2025 SHALINI M — Data Analyst | Built with Glassmorphism</p></footer>
+<div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+<!-- Modal -->
+<div id="projectModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><h2 id="modalTitle"></h2><p id="modalDesc" style="margin-top:1rem"></p><p id="modalTech" style="margin-top:1rem; color:#C084FC"></p></div></div>
+
+<script>
+  const API_URL = 'http://localhost:5000/api';
+  
+  // Skills Data
+  const skills = [
+    { name: "Python (Pandas, NumPy, Matplotlib, Seaborn)", percent: 90 },
+    { name: "SQL & PostgreSQL (Joins, Window Functions, CTEs)", percent: 88 },
+    { name: "Power BI (DAX, Power Query, KPI Dashboards)", percent: 85 },
+    { name: "Excel (Pivot Tables, VLOOKUP, XLOOKUP, HLOOKUP)", percent: 87 },
+    { name: "Machine Learning (Random Forest, XGBoost, Naive Bayes)", percent: 75 },
+    { name: "ETL & Data Cleaning", percent: 85 },
+    { name: "Tableau (Basic)", percent: 70 }
+  ];
+
+  // Certifications Data
+  const certifications = [
+    "Data Analytics Job Simulation – Forage",
+    "Data Visualization: Empowering Business with Insights – Forage",
+    "GenAI Powered Data Analytics Job Simulation – Forage",
+    "TCS iON Career Edge – Young Professional",
+    "Data for Decision Makers Job Simulation – Forage"
+  ];
+
+  // Project Details for Modal
+  const projectDetails = {
+    hr: { 
+      title: "HR Analytics & Employee Attrition Prediction", 
+      desc: "Developed an interactive HR Analytics dashboard using Power BI to analyse 1,470 employee records, workforce demographics, and HR performance metrics. Performed data cleaning, preprocessing, and exploratory data analysis (EDA) using Python and Pandas. Created KPI reports, DAX measures, and data visualizations to identify workforce trends. Built a Random Forest Machine Learning model to predict employee attrition with 86% accuracy.", 
+      tech: "Python, Pandas, Scikit-learn, Power BI, DAX, Excel" 
+    },
+    blinkit: { 
+      title: "Blinkit Sales Analysis Dashboard", 
+      desc: "Designed interactive dashboards using Pivot Tables, Charts, and Excel functions to analyze sales performance across multiple outlets and product categories. Generated business insights to support decision-making and sales optimization.", 
+      tech: "Excel, Pivot Tables, VLOOKUP, XLOOKUP, Charts" 
+    },
+    sql: { 
+      title: "Zepto Inventory Analysis (SQL)", 
+      desc: "Wrote 20+ SQL queries to analyze inventory, pricing, discounts, and product availability. Identified high-discount and out-of-stock products using data analysis techniques. Performed category-wise revenue and pricing analysis for business insights.", 
+      tech: "PostgreSQL, SQL, Window Functions, CTEs, Aggregations" 
+    }
+  };
+
+  // Load Skills
+  const skillsContainer = document.getElementById('skillsContainer');
+  if (skillsContainer) {
+    skillsContainer.innerHTML = skills.map(skill => `
+      <div class="skill-item">
+        <div class="skill-info"><span>${skill.name}</span><span>${skill.percent}%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="${skill.percent}"></div></div>
+      </div>
+    `).join('');
+  }
+
+  // Load Certifications
+  const certsContainer = document.getElementById('certsContainer');
+  if (certsContainer) {
+    certsContainer.innerHTML = certifications.map(cert => `
+      <div class="cert-item"><i class="fas fa-certificate gradient-text"></i> ${cert}</div>
+    `).join('');
+  }
+
+  // Typing Effect
+  const roles = ["Data Analyst", "Python Expert", "Power BI Developer", "SQL Specialist"];
+  let roleIndex = 0, charIndex = 0, isDeleting = false;
+  const typedSpan = document.getElementById("typed-text");
+  function typeEffect() {
+    let current = roles[roleIndex];
+    if (isDeleting) {
+      typedSpan.innerText = current.substring(0, charIndex--);
+      if (charIndex < 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; setTimeout(typeEffect, 150); return; }
+    } else {
+      typedSpan.innerText = current.substring(0, charIndex++);
+      if (charIndex > current.length) { isDeleting = true; setTimeout(typeEffect, 1000); return; }
+    }
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
+  }
+  typeEffect();
+
+  // Scroll Progress & Back to Top
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById("progressBar").style.width = (winScroll / height) * 100 + "%";
+    document.getElementById("backToTop").classList.toggle("show", winScroll > 400);
+  });
+  document.getElementById("backToTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Active Navigation
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  window.addEventListener("scroll", () => {
+    let pos = window.scrollY + 150;
+    sections.forEach(sec => {
+      if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(link => { link.classList.remove("active"); if (link.getAttribute("href") === "#" + sec.id) link.classList.add("active"); });
+      }
+    });
+  });
+
+  // Fade-up Animation
+  new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }); }, { threshold: 0.1 })
+    .observe?.(document.querySelectorAll('.fade-up')[0]);
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    new IntersectionObserver((entries) => { if (entries[0].isIntersecting) entries[0].target.classList.add("visible"); }, { threshold: 0.1 }).observe(el);
+  });
+
+  // Skill Bars Animation
+  const skillObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll(".skill-bar-fill").forEach(bar => { bar.style.width = bar.dataset.width + "%"; });
+      skillObserver.disconnect();
+    }
+  }, { threshold: 0.4 });
+  if (document.getElementById("skills")) skillObserver.observe(document.getElementById("skills"));
+
+  // Modal Functions
+  const modal = document.getElementById("projectModal");
+  window.showProjectDetails = (key) => {
+    if (projectDetails[key]) {
+      document.getElementById("modalTitle").innerText = projectDetails[key].title;
+      document.getElementById("modalDesc").innerText = projectDetails[key].desc;
+      document.getElementById("modalTech").innerHTML = "<strong>Tech Stack:</strong> " + projectDetails[key].tech;
+      modal.style.display = "flex";
+    }
+  };
+  document.querySelector(".close-modal")?.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+
+  // Contact Form
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value;
+      const email = document.getElementById("contactEmail").value;
+      const message = document.getElementById("contactMsg").value;
+      const statusDiv = document.getElementById("formStatus");
+      const btn = contactForm.querySelector("button");
+      const original = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${API_URL}/contact`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, message }) });
+        const data = await res.json();
+        if (data.success) { statusDiv.innerHTML = '<span style="color:#4CAF50">✅ Message sent!</span>'; contactForm.reset(); setTimeout(() => statusDiv.innerHTML = '', 3000); }
+        else { statusDiv.innerHTML = '<span style="color:#f44336">❌ ' + data.error + '</span>'; }
+      } catch (err) { statusDiv.innerHTML = '<span style="color:#f44336">❌ Backend not running. Start with: npm start</span>'; }
+      finally { btn.innerHTML = original; btn.disabled = false; }
+    });
+  }
+
+  // Smooth Scroll
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.getElementById(this.getAttribute('href').substring(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
